@@ -6,6 +6,8 @@
 Transmitter VCC must be plugged to pin 9, signal to pin 10
 Receiver signal to pin 2
 
+More info on http://1technophile.blogspot.fr/2016/04/433tomqttto433-bidirectional-gateway.html
+
 Some usefull commands to test gateway with mosquitto
 Subscribe to the subject for data receiption from RF signal
 mosquitto_sub -t home/433toMQTT
