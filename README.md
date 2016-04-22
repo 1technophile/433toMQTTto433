@@ -3,7 +3,8 @@
   - receive MQTT data from a topic and send RF 433Mhz signal corresponding to the received MQTT data  
   - publish MQTT data to a different topic related to received 433Mhz signal
 
-
+Transmitter VCC must be plugged to pin 9, signal to pin 10
+Receiver signal to pin 2
 
 Some usefull commands to test gateway with mosquitto
 Subscribe to the subject for data receiption from RF signal
