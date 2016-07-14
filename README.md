@@ -14,3 +14,5 @@ mosquitto_sub -t home/433toMQTT
 
 Send data by MQTT to convert it on RF signal
 mosquitto_pub -t home/MQTTto433/ -m 1315153
+
+*IMPORTANT NOTE:* As described on the blog post cited above, this setup uses an output pin to drive the RF transciever's Vcc and assumes/requires that your transciever can handle the full 5V that most Arduino output pins deliver.  Using this setup against a transciever built for 3.3V (e.g., RF1100SE/CC110) without a level shifter or other voltage reducer will potentially overload and destroy your transceiver.
