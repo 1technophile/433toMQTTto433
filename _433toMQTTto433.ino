@@ -38,8 +38,6 @@ mosquitto_sub -t home/433toMQTT
 Send data by MQTT to convert it on RF signal
 mosquitto_pub -t home/MQTTto433/ -m 1315153
 */
-#include <string.h>
-#include <SPI.h>
 #include <Ethernet.h>
 #include <PubSubClient.h>
 #include <RCSwitch.h> // library for controling Radio frequency switch
