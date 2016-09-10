@@ -10,6 +10,7 @@
 
   Contributors:
   - 1technophile
+  - Spudtater
 
   Based on:
   - MQTT library (https://github.com/knolleary)
