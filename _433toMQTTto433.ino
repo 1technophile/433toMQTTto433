@@ -45,7 +45,6 @@ mosquitto_pub -t home/MQTTto433/ -m 1315153
 #include <RCSwitch.h> // library for controling Radio frequency switch
 
 RCSwitch mySwitch = RCSwitch();
-EthernetClient ethClient;
 
 //Do we want to see trace for debugging purposes
 #define TRACE 1  // 0= trace off 1 = trace on
@@ -54,6 +53,10 @@ EthernetClient ethClient;
 byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0x34, 0x99 };
 byte localserver[] = { 192, 168, 1, 45 };
 byte ip[]     = { 192, 168, 1, 23 };
+
+//adding this to bypass to problem of the arduino builder issue 50
+void callback(char*topic, byte* payload,unsigned int length);
+EthernetClient ethClient;
 
 // client parameters
 PubSubClient client(localserver, 1883, callback, ethClient);
