@@ -1,5 +1,5 @@
 # 433toMQTTto433
-This repository is not maintained code has been merged with ESP8266 one, see the new repository below for the last update:
+This repository is not maintained, code has been merged with ESP8266 one, see the new repository below for the last update:
 https://github.com/1technophile/OpenMQTTGateway
 
 A list of supported 433mhz devices is available here:
