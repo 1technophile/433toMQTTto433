@@ -54,6 +54,7 @@ RCSwitch mySwitch = RCSwitch();
 byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0x34, 0x99 };
 byte localserver[] = { 192, 168, 1, 45 };
 byte ip[]     = { 192, 168, 1, 23 };
+byte subnet[] = { 255, 255, 255, 0 };
 
 //adding this to bypass to problem of the arduino builder issue 50
 void callback(char*topic, byte* payload,unsigned int length);
@@ -107,7 +108,7 @@ void setup()
   //Launch serial for debugging purposes
   Serial.begin(9600);
   //Begining ethernet connection
-  Ethernet.begin(mac, ip);
+  Ethernet.begin(mac, ip, subnet);
   delay(1500);
   lastReconnectAttempt = 0;
 
