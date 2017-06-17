@@ -11,6 +11,7 @@
   Contributors:
   - 1technophile
   - Spudtater
+  - Edwork
 
   Based on:
   - MQTT library (https://github.com/knolleary)
@@ -42,6 +43,7 @@ mosquitto_pub -t home/MQTTto433/ -m 1315153
 #include <Ethernet.h>
 #include <PubSubClient.h>
 #include <RCSwitch.h> // library for controling Radio frequency switch
+#include <SPI.h>
 
 RCSwitch mySwitch = RCSwitch();
 
