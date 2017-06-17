@@ -119,6 +119,7 @@ void setup()
   mySwitch.enableTransmit(10); // RF Transmitter is connected to Arduino Pin #10 
   mySwitch.setRepeatTransmit(10); //increase transmit repeat to avoid lost of rf sendings
   mySwitch.enableReceive(0);  // Receiver on inerrupt 0 => that is pin #2
+  mySwitch.setPulseLength(189);  //RF Pulse Length, varies per device.
 }
 
 void loop()
