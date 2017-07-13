@@ -11,6 +11,7 @@
   Contributors:
   - 1technophile
   - Spudtater
+  - Edwork
 
   Based on:
   - MQTT library (https://github.com/knolleary)
@@ -42,6 +43,7 @@ mosquitto_pub -t home/MQTTto433/ -m 1315153
 #include <Ethernet.h>
 #include <PubSubClient.h>
 #include <RCSwitch.h> // library for controling Radio frequency switch
+#include <SPI.h>
 
 RCSwitch mySwitch = RCSwitch();
 
@@ -52,6 +54,7 @@ RCSwitch mySwitch = RCSwitch();
 byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0x34, 0x99 };
 byte localserver[] = { 192, 168, 1, 45 };
 byte ip[]     = { 192, 168, 1, 23 };
+byte subnet[] = { 255, 255, 255, 0 };
 
 //adding this to bypass to problem of the arduino builder issue 50
 void callback(char*topic, byte* payload,unsigned int length);
@@ -105,7 +108,7 @@ void setup()
   //Launch serial for debugging purposes
   Serial.begin(9600);
   //Begining ethernet connection
-  Ethernet.begin(mac, ip);
+  Ethernet.begin(mac, ip, subnet);
   delay(1500);
   lastReconnectAttempt = 0;
 
@@ -116,6 +119,7 @@ void setup()
   mySwitch.enableTransmit(10); // RF Transmitter is connected to Arduino Pin #10 
   mySwitch.setRepeatTransmit(10); //increase transmit repeat to avoid lost of rf sendings
   mySwitch.enableReceive(0);  // Receiver on inerrupt 0 => that is pin #2
+  mySwitch.setPulseLength(189);  //RF Pulse Length, varies per device.
 }
 
 void loop()
